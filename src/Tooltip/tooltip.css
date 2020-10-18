@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+.tooltip__container {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.tooltip__container .tooltip__message {
+    visibility: hidden;
+    width: 100px;
+    height: fit-content;
+    background-color: #DDDED9;
+    color: #3A537E;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 4px;
+
+    /*To position the tooltip-message*/
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 18%;
+    margin: 10px;
+    /*To create a fade-in effect*/
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.tooltip__container .tooltip__message::after {
+    content: "";
+    position: absolute;
+    border-width: 8px;
+    transform: rotate(180deg);
+    bottom: 95%;
+    left: 0;
+    border-style: solid;
+    border-color:#DDDED9 transparent transparent transparent;
+}
+
+.tooltip__container:hover .tooltip__message {
+    visibility: visible;
+    opacity: 1;
+}
